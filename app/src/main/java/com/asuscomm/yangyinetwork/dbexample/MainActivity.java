@@ -12,21 +12,34 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "jaeyoung/"+getClass().getSimpleName();
+    private RuntimeExceptionDao<SensorData, Integer> sensorDataDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        OrmHelper ormHelper = new OrmHelper(this);
-        RuntimeExceptionDao<SensorData, Integer> sensorDataDao = ormHelper.getSensorDataDao();
+        initDb();
 
-        SensorData sensorData = new SensorData();
-        sensorDataDao.create(sensorData);
-        List<SensorData> sensorDatas = sensorDataDao.queryForAll();
+        save("aduino1",50);
 
-        Log.d(TAG, "onCreate: sensorDatas="+sensorDatas.size());
+        read();
 //        sensorDataDao.delete();
 //        sensorDataDao.update();
+    }
+
+    private void save(String device, double value) {
+        SensorData sensorData = new SensorData(device, value);
+        sensorDataDao.create(sensorData);
+    }
+
+    private void read() {
+        List<SensorData> sensorDatas = sensorDataDao.queryForAll();
+        Log.d(TAG, "read: sensorDatas="+sensorDatas.toString());
+    }
+
+    private void initDb() {
+        OrmHelper ormHelper = new OrmHelper(this);
+        sensorDataDao = ormHelper.getSensorDataDao();
     }
 }

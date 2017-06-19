@@ -19,4 +19,18 @@ public class SensorData {
     public SensorData() {
         // ORMLite 필수
     }
+
+    public SensorData(String device, double value) {
+        this.device = device;
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "SensorData{" +
+                "id=" + id +
+                ", device='" + device + '\'' +
+                ", value=" + value +
+                '}';
+    }
 }
