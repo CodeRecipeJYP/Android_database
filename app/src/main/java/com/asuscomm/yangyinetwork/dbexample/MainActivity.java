@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         save("aduino1",50);
 
         read();
+        delete();
 //        sensorDataDao.delete();
 //        sensorDataDao.update();
     }
@@ -36,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "initStetho: ");
             Stetho.initializeWithDefaults(this);
         }
+    }
+
+    private void delete() {
+        SensorData sensorData = sensorDataDao.queryForAll().get(0);
+        Log.d(TAG, "delete: "+sensorData.toString());
+        sensorDataDao.delete(sensorData);
     }
 
     private void save(String device, double value) {
