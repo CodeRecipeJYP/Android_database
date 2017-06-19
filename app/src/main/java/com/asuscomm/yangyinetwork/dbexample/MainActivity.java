@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void save(String device, double value) {
         SensorData sensorData = new SensorData(device, value);
+        Log.d(TAG, "save: "+sensorData.toString());
         sensorDataDao.create(sensorData);
     }
 
