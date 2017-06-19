@@ -5,4 +5,13 @@ package com.asuscomm.yangyinetwork.dbexample.repos.local;
  */
 
 public class LocalSensorDataRepo {
+    private static LocalSensorDataRepo mInstance;
+
+    public static LocalSensorDataRepo getInstance() {
+        if (mInstance == null) {
+            mInstance = new LocalSensorDataRepo();
+        }
+
+        return mInstance;
+    }
 }

@@ -5,4 +5,13 @@ package com.asuscomm.yangyinetwork.dbexample.repos.fb;
  */
 
 public class FbSensorDataRepo {
+    private static FbSensorDataRepo mInstance;
+
+    public static FbSensorDataRepo getInstance() {
+        if (mInstance == null) {
+            mInstance = new FbSensorDataRepo();
+        }
+
+        return mInstance;
+    }
 }

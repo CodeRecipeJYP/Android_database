@@ -21,11 +21,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initStetho();
-
         initDb();
 
         save("aduino1",50);
-
         read();
         delete();
         update();
@@ -64,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initDb() {
+        Log.d(TAG, "initDb: ");
         OrmHelper ormHelper = new OrmHelper(this);
         sensorDataDao = ormHelper.getSensorDataDao();
     }
