@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         read();
         delete();
-//        sensorDataDao.delete();
-//        sensorDataDao.update();
+        update();
     }
 
     private void initStetho() {
@@ -37,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "initStetho: ");
             Stetho.initializeWithDefaults(this);
         }
+    }
+
+    private void update() {
+        SensorData sensorData = sensorDataDao.queryForAll().get(0);
+        Log.d(TAG, "update: before="+sensorData.toString());
+        sensorData.setValue(sensorData.getValue()+2000);
+        Log.d(TAG, "update: after ="+sensorData.toString());
+        sensorDataDao.update(sensorData);
     }
 
     private void delete() {

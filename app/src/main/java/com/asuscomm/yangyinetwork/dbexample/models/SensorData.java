@@ -10,11 +10,11 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "sensor_datas")
 public class SensorData {
     @DatabaseField(generatedId = true)
-    int id;
+    private int id;
     @DatabaseField
-    String device;
+    private String device;
     @DatabaseField
-    double value;
+    private double value;
 
     public SensorData() {
         // ORMLite 필수
@@ -32,5 +32,21 @@ public class SensorData {
                 ", device='" + device + '\'' +
                 ", value=" + value +
                 '}';
+    }
+
+    public String getDevice() {
+        return device;
+    }
+
+    public void setDevice(String device) {
+        this.device = device;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
     }
 }
