@@ -5,4 +5,16 @@ package com.asuscomm.yangyinetwork.dbexample.services;
  */
 
 public class SensorDataDao {
+    private static SensorDataDao mInstance;
+
+    public SensorDataDao() {
+    }
+
+    public static SensorDataDao getInstance() {
+        if (mInstance == null) {
+            mInstance = new SensorDataDao();
+        }
+        return mInstance;
+    }
+
 }
