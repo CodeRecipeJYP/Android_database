@@ -1,9 +1,9 @@
-package com.asuscomm.yangyinetwork.dbexample.services.repos.local;
+package com.asuscomm.yangyinetwork.dbexample.utils.ormlite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.asuscomm.yangyinetwork.dbexample.models.SensorData;
+import com.asuscomm.yangyinetwork.dbexample.models.db.SensorData;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.j256.ormlite.support.ConnectionSource;

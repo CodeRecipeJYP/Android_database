@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.asuscomm.yangyinetwork.dbexample.models.SensorData;
+import com.asuscomm.yangyinetwork.dbexample.models.db.SensorData;
 import com.asuscomm.yangyinetwork.dbexample.services.network.KtIotMakerNetwork;
 import com.asuscomm.yangyinetwork.dbexample.services.repos.local.LocalSensorDataRepo;
 

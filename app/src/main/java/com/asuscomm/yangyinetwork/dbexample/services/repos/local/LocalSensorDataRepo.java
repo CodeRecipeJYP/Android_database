@@ -3,7 +3,8 @@ package com.asuscomm.yangyinetwork.dbexample.services.repos.local;
 import android.content.Context;
 import android.util.Log;
 
-import com.asuscomm.yangyinetwork.dbexample.models.SensorData;
+import com.asuscomm.yangyinetwork.dbexample.models.db.SensorData;
+import com.asuscomm.yangyinetwork.dbexample.utils.ormlite.OrmHelper;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 
 import java.util.List;

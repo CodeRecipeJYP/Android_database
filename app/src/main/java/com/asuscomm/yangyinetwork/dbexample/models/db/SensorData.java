@@ -1,4 +1,4 @@
-package com.asuscomm.yangyinetwork.dbexample.models;
+package com.asuscomm.yangyinetwork.dbexample.models.db;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
