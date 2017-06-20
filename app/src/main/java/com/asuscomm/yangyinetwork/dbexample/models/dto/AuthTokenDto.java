@@ -10,7 +10,7 @@ public class AuthTokenDto {
     private String scope;
     private String svc_tgt_seq;
     private String unit_svc_cd;
-    private int pub_time;
+    private long pub_time;
     private String mbr_id;
     private String dstr_cd;
     private String mbr_seq;
@@ -22,5 +22,26 @@ public class AuthTokenDto {
     private String jti;
 
     public AuthTokenDto() {
+    }
+
+    @Override
+    public String toString() {
+        return "AuthTokenDto{" +
+                "access_token='" + access_token + '\'' +
+                ", expires_in=" + expires_in +
+                ", scope='" + scope + '\'' +
+                ", svc_tgt_seq='" + svc_tgt_seq + '\'' +
+                ", unit_svc_cd='" + unit_svc_cd + '\'' +
+                ", pub_time=" + pub_time +
+                ", mbr_id='" + mbr_id + '\'' +
+                ", dstr_cd='" + dstr_cd + '\'' +
+                ", mbr_seq='" + mbr_seq + '\'' +
+                ", mbr_clas='" + mbr_clas + '\'' +
+                ", company='" + company + '\'' +
+                ", mbr_nm='" + mbr_nm + '\'' +
+                ", platform='" + platform + '\'' +
+                ", theme_cd='" + theme_cd + '\'' +
+                ", jti='" + jti + '\'' +
+                '}';
     }
 }

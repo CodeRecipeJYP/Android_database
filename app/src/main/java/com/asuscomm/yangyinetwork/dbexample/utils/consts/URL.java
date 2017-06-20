@@ -1,7 +1,7 @@
 package com.asuscomm.yangyinetwork.dbexample.utils.consts;
 
-import com.asuscomm.yangyinetwork.dbexample.services.network.KtIotMakerAuthService;
-import com.asuscomm.yangyinetwork.dbexample.services.network.KtIotMakerService;
+import com.asuscomm.yangyinetwork.dbexample.utils.retrofit.KtIotMakerAuthService;
+import com.asuscomm.yangyinetwork.dbexample.utils.retrofit.KtIotMakerOpenApiService;
 
 import java.util.HashMap;
 
@@ -14,7 +14,7 @@ public class URL {
     static {
         urls = new HashMap<>();
         urls.put(KtIotMakerAuthService.class.getName(), "https://iotmakers.olleh.com/");
-        urls.put(KtIotMakerService.class.getName(), "https://iotmakers.olleh.com:443/");
+        urls.put(KtIotMakerOpenApiService.class.getName(), "https://iotmakers.olleh.com:443/");
     }
 
 

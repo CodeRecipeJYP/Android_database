@@ -18,7 +18,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        KtIotMakerNetwork.getInstance().getToken();
+        KtIotMakerNetwork.getInstance().getToken(new KtIotMakerNetwork.OnSuccessListener() {
+            @Override
+            public void onSuccess(Object result) {
+                Log.d(TAG, "onSuccess: result="+result.toString());
+            }
+        });
         save("aduino1",50);
         read();
         delete();
