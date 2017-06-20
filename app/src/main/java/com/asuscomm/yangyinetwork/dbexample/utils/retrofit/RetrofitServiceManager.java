@@ -5,7 +5,16 @@ import android.util.Log;
 
 import com.asuscomm.yangyinetwork.dbexample.services.network.KtIotMakerNetwork;
 import com.asuscomm.yangyinetwork.dbexample.utils.consts.URL;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 
+import java.lang.reflect.Type;
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import retrofit2.Retrofit;
@@ -23,9 +32,11 @@ public class RetrofitServiceManager {
     public Object getService(Class type) {
         Object service = services.get(type);
         if (service == null) {
+            Gson gson = new GsonBuilder()
+                    .setDateFormat("yyyy-mm-dd HH:mm:ss.SSS").create();
             Retrofit client = new Retrofit.Builder()
                     .baseUrl(URL.urls.get(type.getName()))
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
             service = client.create(type);
             services.put(type, service);

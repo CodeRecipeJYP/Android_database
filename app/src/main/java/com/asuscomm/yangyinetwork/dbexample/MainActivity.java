@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.asuscomm.yangyinetwork.dbexample.models.db.SensorData;
+import com.asuscomm.yangyinetwork.dbexample.models.dto.Device;
+import com.asuscomm.yangyinetwork.dbexample.models.dto.DeviceDto;
 import com.asuscomm.yangyinetwork.dbexample.services.network.KtIotMakerNetwork;
 import com.asuscomm.yangyinetwork.dbexample.services.repos.local.LocalSensorDataRepo;
+import com.asuscomm.yangyinetwork.dbexample.utils.retrofit.KtIotMakerOpenApiService;
 
 import java.util.List;
 
@@ -21,9 +24,29 @@ public class MainActivity extends AppCompatActivity {
         KtIotMakerNetwork.getInstance().getToken(new KtIotMakerNetwork.OnSuccessListener() {
             @Override
             public void onSuccess(Object result) {
-                Log.d(TAG, "onSuccess: result="+result.toString());
+                Log.d(TAG, "onSuccess: getToken="+result.toString());
             }
         });
+
+        KtIotMakerNetwork.getInstance().getDevices(new KtIotMakerNetwork.OnSuccessListener() {
+            @Override
+            public void onSuccess(Object result) {
+                Log.d(TAG, "onSuccess: getDevices="+result.toString());
+
+                DeviceDto deviceDto = (DeviceDto) result;
+                List<Device> devices = deviceDto.getData();
+                Device device = devices.get(0);
+                String deviceId = device.getId();
+                KtIotMakerNetwork.getInstance().getStream(deviceId, new KtIotMakerNetwork.OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object result) {
+                        Log.d(TAG, "onSuccess: getStream="+result.toString());
+                    }
+                });
+            }
+        });
+
+        // DB
         save("aduino1",50);
         read();
         delete();
