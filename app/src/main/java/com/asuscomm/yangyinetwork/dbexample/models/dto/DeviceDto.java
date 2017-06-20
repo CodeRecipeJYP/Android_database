@@ -1,5 +1,7 @@
 package com.asuscomm.yangyinetwork.dbexample.models.dto;
 
+import com.asuscomm.yangyinetwork.dbexample.models.dto.base.BaseDto;
+
 import java.util.List;
 
 /**

@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         List<SensorData> sensorDatas = LocalSensorDataRepo.getInstance().read();
         SensorData sensorData = sensorDatas.get(0);
         Log.d(TAG, "delete: " + sensorData.toString());
+        LocalSensorDataRepo.getInstance().delete(sensorData);
     }
 
     private void update() {
@@ -75,5 +76,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "update: before=" + sensorData.toString());
         sensorData.setValue(sensorData.getValue()+2000);
         Log.d(TAG, "update: after =" + sensorData.toString());
+        LocalSensorDataRepo.getInstance().update(sensorData);
     }
 }

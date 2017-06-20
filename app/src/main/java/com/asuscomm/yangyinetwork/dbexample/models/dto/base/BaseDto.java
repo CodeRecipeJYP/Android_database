@@ -1,4 +1,4 @@
-package com.asuscomm.yangyinetwork.dbexample.models.dto;
+package com.asuscomm.yangyinetwork.dbexample.models.dto.base;
 
 /**
  * Created by jaeyoung on 2017. 6. 20..
