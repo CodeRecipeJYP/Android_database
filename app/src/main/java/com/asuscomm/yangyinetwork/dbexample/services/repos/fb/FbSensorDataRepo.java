@@ -1,4 +1,4 @@
-package com.asuscomm.yangyinetwork.dbexample.repos.fb;
+package com.asuscomm.yangyinetwork.dbexample.services.repos.fb;
 
 /**
  * Created by jaeyoung on 2017. 6. 19..

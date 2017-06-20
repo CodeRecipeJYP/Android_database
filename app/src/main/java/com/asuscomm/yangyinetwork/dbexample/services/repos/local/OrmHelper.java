@@ -1,4 +1,4 @@
-package com.asuscomm.yangyinetwork.dbexample.repos.local;
+package com.asuscomm.yangyinetwork.dbexample.services.repos.local;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

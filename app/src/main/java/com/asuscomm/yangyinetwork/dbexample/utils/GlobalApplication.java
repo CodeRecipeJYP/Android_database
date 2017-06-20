@@ -4,8 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.asuscomm.yangyinetwork.dbexample.BuildConfig;
-import com.asuscomm.yangyinetwork.dbexample.repos.local.LocalSensorDataRepo;
-import com.asuscomm.yangyinetwork.dbexample.repos.local.OrmHelper;
+import com.asuscomm.yangyinetwork.dbexample.services.repos.local.LocalSensorDataRepo;
 import com.facebook.stetho.Stetho;
 
 /**

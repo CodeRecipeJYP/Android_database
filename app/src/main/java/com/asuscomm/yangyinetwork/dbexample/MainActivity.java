@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.asuscomm.yangyinetwork.dbexample.models.SensorData;
-import com.asuscomm.yangyinetwork.dbexample.repos.local.LocalSensorDataRepo;
-import com.asuscomm.yangyinetwork.dbexample.repos.local.OrmHelper;
-import com.facebook.stetho.Stetho;
-import com.j256.ormlite.dao.RuntimeExceptionDao;
+import com.asuscomm.yangyinetwork.dbexample.services.network.KtIotMakerNetwork;
+import com.asuscomm.yangyinetwork.dbexample.services.repos.local.LocalSensorDataRepo;
 
 import java.util.List;
 
@@ -20,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        KtIotMakerNetwork.getInstance().getToken();
         save("aduino1",50);
         read();
         delete();
